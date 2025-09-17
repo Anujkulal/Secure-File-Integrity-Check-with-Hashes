@@ -1,6 +1,12 @@
 # Secure-File-Integrity-Check-with-Hashes
 
-**Install Dep:**
+**Create virtual environment:**
+
+```sh
+uv venv
+```
+
+**Install streamlit:**
 
 ```sh
 uv pip install streamlit
