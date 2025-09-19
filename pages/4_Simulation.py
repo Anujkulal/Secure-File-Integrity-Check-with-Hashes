@@ -118,7 +118,7 @@ with col2:
         actual = compute_hash_from_fileobj(uploaded, algo=algo)
         st.info(f"Computed {algo}: {actual}")
 
-    raw_digest = st.text_input("Paste reference digest")
+    raw_digest = st.text_input("Paste reference digest", disabled=digest != "")
     if (digest or raw_digest) and uploaded is not None and uploaded.size > 0:
         source = compute_hash_from_fileobj(uploaded, algo=algo)
         if digest:
