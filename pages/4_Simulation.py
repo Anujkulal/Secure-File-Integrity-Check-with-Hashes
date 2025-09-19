@@ -123,7 +123,15 @@ with col2:
         source = compute_hash_from_fileobj(uploaded, algo=algo)
         if digest:
             ok, msg = verify_digest(digest.strip(), source)
-            st.success(f"Quick digest verify: {msg}") if ok else st.error(f"Quick digest verify: {msg}")
+            if ok:
+                st.success(f"Quick digest verify: {msg}")
+            else:
+                st.error(f"Quick digest verify: {msg}")
+            # st.success(f"Quick digest verify: {msg}") if ok else st.error(f"Quick digest verify: {msg}")
         if raw_digest:
             ok, msg = verify_digest(raw_digest.strip(), source)
-            st.success(f"Raw digest verify: {msg}") if ok else st.error(f"Raw digest verify: {msg}")
+            if ok:
+                st.success(f"Raw digest verify: {msg}")
+            else:
+                st.error(f"Raw digest verify: {msg}")
+            # st.success(f"Raw digest verify: {msg}") if ok else st.error(f"Raw digest verify: {msg}")
