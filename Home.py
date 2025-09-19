@@ -104,90 +104,24 @@
 #     main()
 
 
-
 import streamlit as st
 
-# Page config
-st.set_page_config(page_title="Secure File Integrity Checker", page_icon="🔒", layout="wide")
+st.set_page_config(page_title="Secure File Integrity Checker", layout="wide")
 
-# Custom CSS for styling
-st.markdown(
-    """
-    <style>
-    # .main {
-    #         background-color: #222;
-    #         color: #ffffff;
-    #         font-family: 'Segoe UI', sans-serif;
-    #     }
-    #     .stApp {
-    #         background-color: #222;
-    #     }
-    .main-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #1f77b4;
-        text-align: center;
-        margin-bottom: 0.5rem;
-    }
-    .subtitle {
-        font-size: 1.2rem;
-        text-align: center;
-        color: #555;
-        margin-bottom: 2rem;
-    }
-    .card {
-        padding: 1.5rem;
-        border-radius: 12px;
-        background-color: #222222;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        margin-bottom: 1rem;
-        transition: all 0.3s ease-in-out;
-    }
-    .card:hover {
-        transform: scale(1.02);
-        background-color: #222222;
-    }
-    ul {
-        font-size: 1.1rem;
-        line-height: 1.8;
-    }
-    .success-box {
-        font-size: 1rem;
-        padding: 0.8rem;
-        border-radius: 8px;
-        background-color: #e6f4ea;
-        color: #1b5e20;
-        border-left: 6px solid #2e7d32;
-        margin-top: 2rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+st.title("🔒 Secure File Integrity Checker")
 
-# Title + Subtitle
-st.markdown('<div class="main-title">🔒 Secure File Integrity Checker</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Ensure file authenticity and protect against tampering</div>', unsafe_allow_html=True)
+st.write("""
+Welcome to the **Secure File Integrity Checker** project.  
 
-# Card with description
-st.markdown(
-    """
-    <div class="card">
-        <p>Welcome to the <b>Secure File Integrity Checker</b> project.</p>
-        <p>Use the left sidebar to navigate through the sections:</p>
-        <ul>
-            <li>📖 <b>Introduction</b></li>
-            <li>🎯 <b>Objective</b></li>
-            <li>📚 <b>Theory</b></li>
-            <li>🖥️ <b>Simulation</b></li>
-            <li>📝 <b>Procedure</b></li>
-            <li>🔗 <b>References</b></li>
-        </ul>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+Use the left sidebar to navigate through the sections:
 
-# Success box at bottom
-st.markdown('<div class="success-box">✅ Navigate using the sidebar to explore each section</div>', unsafe_allow_html=True)
+- 📖 Introduction  
+- 🎯 Objective  
+- 📚 Theory  
+- 🖥️ Simulation  
+- 📝 Procedure  
+- 🔗 References
+""")
+
+st.success("Navigate using the sidebar →")
 
