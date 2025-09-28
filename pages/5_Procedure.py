@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(page_title="Procedure", layout="wide")
-st.header("📝 Procedure")
+st.header("Procedure")
 
 st.write("""
 The steps followed in this project:

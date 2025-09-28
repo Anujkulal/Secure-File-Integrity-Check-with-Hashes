@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(page_title="Objective", layout="wide")
-st.header("🎯 Objective")
+st.header("Aim and Objective")
 
 st.write("""
 The main objectives of this project are:

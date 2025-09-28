@@ -96,7 +96,7 @@ def verify_digest(expected: str, actual: str) -> Tuple[bool, str]:
 
 # ---------------------- Simulation UI ----------------------
 st.set_page_config(page_title="Simulation", layout="wide")
-st.header("🖥️ Simulation: File Integrity Checker")
+st.header("Simulation: File Integrity Checker")
 
 algo = st.selectbox("Select Hash Algorithm", SUPPORTED_ALGOS, index=0)
 col1, col2 = st.columns([1, 1])

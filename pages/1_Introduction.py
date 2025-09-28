@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.set_page_config(page_title="Introduction", layout="wide")
-st.header("📖 Introduction")
+st.header("Introduction")
 
 st.write("""
 In today’s digital era, ensuring **file integrity** is of paramount importance.  
