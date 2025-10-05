@@ -36,16 +36,32 @@ st.markdown("""
    def compute_hash_from_fileobj(fileobj, algo: str = "sha256", block_size: int = 65536) -> str:
     if algo not in SUPPORTED_ALGOS:
         raise ValueError("Unsupported algorithm")
-    h = hashlib.new(algo)
-    fileobj.seek(0)
+            
+    h = hashlib.new(algo) # Create a new hash object using the specified algorithm
+    fileobj.seek(0) # Ensure the file pointer is at the start so it reads from the beginning regardless of objects current position
+            
     while True:
+        # Chunked reading loop: Reads the file in chunks of block_size bytes (64KB by default)
+        # Memory efficiency: Prevents loading large files entirely into memory
         data = fileobj.read(block_size)
+            
+        # Exits the loop when no more data is available
         if not data:
             break
+            
+        # If data is a string (text mode), encode it to bytes
         if isinstance(data, str):
             data = data.encode("utf-8")
+
+        # Hash computation: Feeds the current data chunk into the hash function
+        # Incremental processing: Updates the hash state with each chunk
         h.update(data)
+
+    # File pointer reset: Returns the file pointer to the beginning again 
     fileobj.seek(0)
+            
+    # Final hash extraction: Computes and returns the final hash as a hexadecimal string
+    # Standard format: Hexadecimal representation is the common format for hash digests
     return h.hexdigest()         
 ```            
 """)
