@@ -48,7 +48,7 @@ st.markdown("""
             
         # If data is a string (text mode), encode it to bytes
         if isinstance(data, str):
-            data = data.encode("utf-8")
+            data = data.encode("utf-8") # (unicode transformation format - 8 bit)
 
         # Hash computation: Feeds the current data chunk into the hash function
         # Incremental processing: Updates the hash state with each chunk
