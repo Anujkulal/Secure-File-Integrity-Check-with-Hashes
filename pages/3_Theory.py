@@ -10,9 +10,9 @@ st.write("""
 ### Hashing
 Hashing is the process of converting data into a fixed-length digest using a **hash function**.  
 Popular algorithms include:
-- **MD5**: Fast but cryptographically broken (not secure for integrity).  
-- **SHA-1**: Better than MD5 but also deprecated due to vulnerabilities.  
-- **SHA-256**: Secure, widely used in modern cryptographic applications.  
+- **MD5**: Fast but cryptographically broken (not secure for integrity) (32 digit hex number, 16 byte hash value).  
+- **SHA-1**: Better than MD5 but also deprecated due to vulnerabilities (40 digit hex number, 20 byte hash value).  
+- **SHA-256**: Secure, widely used in modern cryptographic applications (64 digit hex number, 32 byte hash value).  
 
 ### File Integrity
 File integrity verification ensures that a file has not been **modified, corrupted, or tampered**.  
@@ -34,9 +34,6 @@ st.subheader("🔹 Function: `compute_hash_from_fileobj`")
 st.markdown("""
 ```python
    def compute_hash_from_fileobj(fileobj, algo: str = "sha256", block_size: int = 65536) -> str:
-    if algo not in SUPPORTED_ALGOS:
-        raise ValueError("Unsupported algorithm")
-            
     h = hashlib.new(algo) # Create a new hash object using the specified algorithm
     fileobj.seek(0) # Ensure the file pointer is at the start so it reads from the beginning regardless of objects current position
             
@@ -56,9 +53,6 @@ st.markdown("""
         # Hash computation: Feeds the current data chunk into the hash function
         # Incremental processing: Updates the hash state with each chunk
         h.update(data)
-
-    # File pointer reset: Returns the file pointer to the beginning again 
-    fileobj.seek(0)
             
     # Final hash extraction: Computes and returns the final hash as a hexadecimal string
     # Standard format: Hexadecimal representation is the common format for hash digests
